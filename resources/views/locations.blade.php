@@ -77,12 +77,7 @@
                     <li class="nav-item{{ currentRoute(route('register')) }}"><a class="nav-link" href="{{ route('register') }}">@lang('Inscription')</a></li>
                     @else
                     <li class="nav-item{{ currentRoute(route('profile.edit', auth()->id())) }}"><a class="nav-link" href="{{ route('profile.edit', auth()->id()) }}">@lang('Profil')</a></li>
-                    <li class="nav-item">
-                        <a id="logout" class="nav-link" href="{{ route('logout') }}">@lang('Déconnexion')</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hide">
-                            {{ csrf_field() }}
-                        </form>
-                    </li>
+                   
                 @endguest
             </ul>
         </div>
@@ -122,11 +117,13 @@
 
 <div id="map"></div>
 
-@if(isset($points))
+<!-- @if(isset($points))
     @foreach($points as $point)
-         <p><strong>{{$point->name}}</strong> : {{$point->address}}</p> 
+         <p><strong>{{$point->name}}</strong> : {{$point->address}}
+         </p> 
+         
     @endforeach
-@endif
+@endif -->
 
 </div>
 

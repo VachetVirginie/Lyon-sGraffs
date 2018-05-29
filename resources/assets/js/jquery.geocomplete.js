@@ -50,7 +50,7 @@
         mapOptions: {
             zoom: 14,
             scrollwheel: false,
-            mapTypeId: "roadmap"
+            mapTypeId: "terrain"
         },
 
         markerOptions: {
@@ -62,6 +62,7 @@
         blur: false,
         geocodeAfterResult: false,
         restoreValueAfterBlur: false
+
     };
 
     // See: [Geocoding Types](https://developers.google.com/maps/documentation/geocoding/#Types)
