@@ -6,83 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ config('app.name', 'Where are the graffs') }}</title>
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        @yield('css')
-        <link href="{{ asset('css/add.css') }}" rel="stylesheet">
+        <link rel="icon" href="{!! asset('/images/lyon.png') !!}"/>
+        <link href="{{ asset('css/location.css') }}" rel="stylesheet">
         @yield('css')
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     </head>
     <body>
+    @extends('layouts.app')
+  
     
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        
-        <a  class="navbar-brand" href="{{ route('home') }}"><img src="{!! asset('/images/lyon.png') !!}" width="45%">{{ config('app.name', 'Album') }} </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle
-        @isset($category)
-            {{ currentRoute(route('category', $category->slug)) }}
-        @endisset
-            " href="#" id="navbarDropdownCat" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        @lang('Oeuvres par catégories')
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdownCat">
-        @foreach($categories as $category)
-            <a class="dropdown-item" href="{{ route('category', $category->slug) }}">{{ $category->name }}</a>
-        @endforeach
-    </div>
-</li>
-
-            @admin
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle{{ currentRoute(
-                route('category.create'),
-                route('category.index'),
-                route('category.edit', request()->category?:0)
-            )}}" href="#" id="navbarDropdownGestCat" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            @lang('Administration')
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownGestCat">
-            <a class="dropdown-item" href="{{ route('category.create') }}">
-                <i class="fas fa-plus fa-lg"></i> @lang('Ajouter une catégorie')
-            </a>
-            <a class="dropdown-item" href="{{ route('category.index') }}">
-                <i class="fas fa-wrench fa-lg"></i> @lang('Gérer les catégories')
-            </a>
-            <a class="dropdown-item" href="{{ route('maintenance.index') }}">
-                <i class="fas fa-cogs fa-lg"></i> @lang('Maintenance')
-            </a>
-        </div>
-    </li>
-    @endadmin
-                @auth
-                    <li class="nav-item{{ currentRoute(route('image.create')) }}"><a class="nav-link" href="{{ route('image.create') }}">@lang('Ajouter une oeuvre')</a></li>
-                @endauth
-                @auth
-                    <li class="nav-item{{ currentRoute(route('locations')) }}"><a class="nav-link"href="{{ route('locations') }}">@lang('Carte des oeuvres')</a></li>
-                @endauth
-              
-    </li>
-
-               
-               
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                @guest
-                    <li class="nav-item{{ currentRoute(route('login')) }}"><a class="nav-link" href="{{ route('login') }}">@lang('Connexion')</a></li>
-                    <li class="nav-item{{ currentRoute(route('register')) }}"><a class="nav-link" href="{{ route('register') }}">@lang('Inscription')</a></li>
-                    @else
-                    <li class="nav-item{{ currentRoute(route('profile.edit', auth()->id())) }}"><a class="nav-link" href="{{ route('profile.edit', auth()->id()) }}">@lang('Profil')</a></li>
-                   
-                @endguest
-            </ul>
-        </div>
-    </nav>
-
     @if (session('ok'))
         <div class="container">
             <div class="alert alert-dismissible alert-success fade show" role="alert">
@@ -117,13 +49,15 @@
 
 <div id="map"></div>
 
-<!-- @if(isset($points))
+  <!-- @if(isset($points))
     @foreach($points as $point)
-         <p><strong>{{$point->name}}</strong> : {{$point->address}}
+         <p><strong>{{$point->name}}</strong> : {{$point->address}} 
+         <img  style="width:20px;height:20px;"src="{{ asset('thumbs/' . $point->image->name) }}">
+         
          </p> 
          
     @endforeach
-@endif -->
+@endif   -->
 
 </div>
 

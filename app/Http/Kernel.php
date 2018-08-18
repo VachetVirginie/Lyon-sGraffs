@@ -36,6 +36,8 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\Settings::class,
+            \App\Http\Middleware\Locale::class,
+            \App\Http\Middleware\Settings::class
         ],
 
         'api' => [

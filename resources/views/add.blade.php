@@ -136,7 +136,7 @@
     </div>
 
     <div class="form-group">
-    <input type="submit" class="btn btn-primary" value="Envoyer">
+    <input type="submit" class="btn btn-primary" value="Envoyer>
     </div>
 </form>
 

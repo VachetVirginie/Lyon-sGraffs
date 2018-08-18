@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ { User, Image, Category };
 use App\Repositories\ImageRepository;
 use Validator;
+use DB;
 
 
 class ImageController extends Controller
@@ -55,10 +56,13 @@ class ImageController extends Controller
         ]);
 
         $this->repository->store($request);
+//id de l'image enregistrée
+        $imageId = DB::getPdo()->lastInsertId();
 
         $rules = [
             'address'=>'required'
         ];
+
     
         $validation = Validator::make($request->all(), $rules);
         if($validation->fails()){
@@ -77,6 +81,7 @@ class ImageController extends Controller
             $lat = $location->results[0]->geometry->location->lat;
             $lng = $location->results[0]->geometry->location->lng;
     
+            
             if($lat && $lng){
                 $point = new \App\Point;
                 $point->name = $name;
@@ -84,9 +89,15 @@ class ImageController extends Controller
                 $point->lat = $lat;
                 $point->lng = $lng;
                 $point->user_id = \Auth::user()->id;
-    
+                
+    //lier un point_id avec l'image correspondante.
                 if($point->save()){
-                    return back()->withSuccess('Adresse ajoutée');
+
+                    $image = Image::find($imageId);
+                    $image->point_id = $point->id;
+                    $image->save();
+
+                    return redirect()->route('home');
                 }
             }
         }

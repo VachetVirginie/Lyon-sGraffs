@@ -36,7 +36,7 @@
                 @lang('Connexion')
             @endcomponent
 
-            <a class="btn btn-link" href="{{ route('password.request') }}">
+            <a class="btn btn-link"  style="color:" href="{{ route('password.request') }}">
                 @lang('Mot de passe oublié ?')
             </a>
 

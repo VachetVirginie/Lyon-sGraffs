@@ -3,7 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\ { User, Category };
+use App\Models\ { User, Category, };
+use App\Point;
 
 class Image extends Model
 {
@@ -22,6 +23,7 @@ class Image extends Model
     {
         return $this->belongsTo(User::class);
     }
+   
 
     /**
      * Scope a query eager load user and order query.
@@ -33,6 +35,9 @@ class Image extends Model
     {
         return $query->with('user')->latest();
     }
-   
+    public function point()
+    {
+        return $this->hasOne(Point::class);
+    }
 
 }

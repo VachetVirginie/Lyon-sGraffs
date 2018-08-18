@@ -26,8 +26,10 @@ Route::name('add')->get('add', function(){
 
 Route::name('locations')->get('locations', function(){
 	$data = [
-		'points'=>App\Point::all()
+		'points'=>App\Point::with('image')->get()
 	];
+
+	
 	return view('locations', $data);
 });
 
@@ -95,6 +97,8 @@ Route::middleware('auth')->group(function () {
 Route::name('category')->get('category/{slug}', 'ImageController@category');
 
 Route::name('user')->get('user/{user}', 'ImageController@user');
+
+Route::name('language')->get('language/{lang}', 'HomeController@language');
 
 
 

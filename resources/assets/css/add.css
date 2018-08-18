@@ -13,3 +13,7 @@ body {
 label {
     color: black;
 }
+
+.btn-link {
+    color: white;
+}
