@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ config('app.name', 'Where are the graffs') }}</title>
+        <title>{{ config('app.name', "Lyon's Street Graff") }}</title>
         <link rel="icon" href="{!! asset('/images/lyon.png') !!}"/>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         @yield('css')
@@ -15,7 +15,7 @@
     
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         
-        <a  class="navbar-brand" href="{{ route('home') }}"><img src="{!! asset('/images/lyon.png') !!}" width="45%">{{ config('app.name', 'Album') }} </a>
+        <a  class="navbar-brand" href="{{ route('home') }}"><img src="{!! asset('/images/logo.png') !!}" width="%"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -126,5 +126,16 @@
             })
         })
     </script>
+      <!-- Footer -->
+<footer class="page-footer font-small blue">
+
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3">© 2018 Copyright:
+  <a href="https://mdbootstrap.com/bootstrap-tutorial/"> Wasp</a>
+</div>
+<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
     </body>
     </html>

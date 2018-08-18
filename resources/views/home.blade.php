@@ -11,7 +11,7 @@
         <link href="{{ asset('css/carroussel.css') }}" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('css')
-    <title>Document</title>
+    <title>Lyon's Street Graff</title>
 </head>
 <body>
     @extends('layouts.app')
@@ -32,7 +32,7 @@
       <div class="slide-1"></div>
       <div class="hero">
         <hgroup>
-            <h1>Lyon's Street Art</h1>        
+            <h1>Lyon's Street Graff</h1>        
             <h3>Le Street Art pour tous, partout.</h3>
         </hgroup>
         
@@ -172,6 +172,7 @@
         $('#changeCategory').modal('show')
     })
     </script>
+  
 @endsection
 
 </body>
