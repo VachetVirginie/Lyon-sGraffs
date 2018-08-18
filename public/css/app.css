@@ -222,7 +222,7 @@ figure {
 }
 
 img {
-    vertical-align: middle!important;
+    margin-top: 2%;
     border-style: none;
 }
 
@@ -3363,7 +3363,7 @@ tbody.collapse.show {
     min-width: 10rem;
     padding: 0.5rem 0;
     margin: 0.125rem 0 0;
-    font-size: 1rem;
+    
     color: #212529;
     text-align: left;
     list-style: none;
@@ -10854,4 +10854,13 @@ h1 {
 .firstHeading {
     color: black;
     text-align: center;
+}
+
+#navbarDropdownFlag{
+    margin-top: -11%;
+}
+
+#menu{
+    display:flex;
+    justify-content: space-between;
 }

@@ -8,8 +8,9 @@
         <title>{{ config('app.name', 'Where are the graffs') }}</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         @yield('css')
-        <link href="{{ asset('css/add.css') }}" rel="stylesheet">
-    @yield('css')
+        <link href="{{ asset('css/carroussel.css') }}" rel="stylesheet">
+        
+        @yield('css')
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     </head>
     <body>

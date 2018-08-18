@@ -1,11 +1,69 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    @yield('css')
+        <link href="{{ asset('css/carroussel.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('css')
+    <title>Document</title>
+</head>
+<body>
+    @extends('layouts.app')
+    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+  <!-- Overlay -->
+  <div class="overlay"></div>
 
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#bs-carousel" data-slide-to="1"></li>
+    <li data-target="#bs-carousel" data-slide-to="2"></li>
+  </ol>
+  
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item slides active">
+      <div class="slide-1"></div>
+      <div class="hero">
+        <hgroup>
+            <h1>Lyon's Street Art</h1>        
+            <h3>Le Street Art pour tous, partout.</h3>
+        </hgroup>
+        
+      </div>
+    </div>
+    <div class="item slides">
+      <div class="slide-2"></div>
+      <div class="hero">        
+        <hgroup>
+            <h1>Découvrez</h1>        
+            <h3>Une carte pour trouver toutes les oeuvres autour de vous</h3>
+        </hgroup>       
+        
+      </div>
+    </div>
+    <div class="item slides">
+      <div class="slide-3"></div>
+      <div class="hero">        
+        <hgroup>
+            <h1>Partagez</h1>        
+            <h3>Une oeuvre vous plaît, partagez sa localisation </h3>
+        </hgroup>
+        
+      </div>
+    </div>
+  </div> 
+</div>
 @section('content')
 
     <main class="container-fluid">
-        @isset($category)
-            <h2 class="text-title mb-3">{{ $category->name }}</h2>
-        @endif
+       
         @isset($user)
             <h2 class="text-title mb-3">{{ __('Photos de ') . $user->name }}</h2>
         @endif
@@ -70,6 +128,9 @@
                 </div>
             @endforeach
         </div>
+
+        
+
         <div class="d-flex justify-content-center">
             {{ $images->links() }}
         </div>
@@ -112,3 +173,8 @@
     })
     </script>
 @endsection
+
+</body>
+</html>
+
+
