@@ -12,8 +12,8 @@ class CreatePointsTable extends Migration
     public function up()
     {
         Schema::create('points', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
+            $table->increments('id')->onDelete('cascade');;
+            $table->string('name')->onDelete('cascade');
             $table->string('address');
             $table->integer('user_id')->unsigned();
             $table->float('lat');

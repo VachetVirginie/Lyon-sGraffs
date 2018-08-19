@@ -12,10 +12,10 @@
         public function up()
         {
             Schema::create('images', function (Blueprint $table) {
-                $table->increments('id');
+                $table->increments('id')->onDelete('cascade');
                 $table->integer('category_id')->unsigned();
                 $table->integer('user_id')->unsigned();
-                $table->string('name');
+                $table->string('name')->onDelete('cascade');
                 $table->string('description')->nullable();
                 $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
                 $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

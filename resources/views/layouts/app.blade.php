@@ -15,7 +15,7 @@
     
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         
-        <a  class="navbar-brand" href="{{ route('home') }}"><img src="{!! asset('/images/logo.png') !!}" width="%"> 
+        <a  class="navbar-brand" href="{{ route('home') }}"><img src="{!! asset('/images/flags/logo.png') !!}" width="%"> 
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -101,8 +101,8 @@
           
             <ul class="navbar-nav ml-auto">
                 @guest
-                    <li class="nav-item{{ currentRoute(route('login')) }}"><a class="nav-link" href="{{ route('login') }}">@lang('Connexion')</a></li>
-                    <li class="nav-item{{ currentRoute(route('register')) }}"><a class="nav-link" href="{{ route('register') }}">@lang('Inscription')</a></li>
+                    <li class="nav-item{{ currentRoute(route('login')) }}"><a class="nav-link" href="{{ route('login') }}">@lang('| Connexion')</a></li>
+                    <li class="nav-item{{ currentRoute(route('register')) }}"><a class="nav-link" href="{{ route('register') }}">@lang('| Inscription')</a></li>
                     @else
                     <li class="nav-item{{ currentRoute(route('profile.edit', auth()->id())) }}"><a class="nav-link" href="{{ route('profile.edit', auth()->id()) }}">@lang('| Profil |')</a></li>
                     <li class="nav-item">
