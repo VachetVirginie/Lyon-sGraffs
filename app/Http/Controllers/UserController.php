@@ -9,10 +9,9 @@
             $settings = json_decode($user->settings);
             return view ('users.edit', compact('user', 'settings'));
         }
+        
         public function update(Request $request, User $user)
         {
-            $this->authorize('update', $user);
-            
             $request->validate([
                 'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
                 'pagination' => 'required',
