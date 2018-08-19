@@ -15,17 +15,21 @@
     
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         
-        <a  class="navbar-brand" href="{{ route('home') }}"><img src="{!! asset('/images/logo.png') !!}" width="%"> </a>
+        <a  class="navbar-brand" href="{{ route('home') }}"><img src="{!! asset('/images/logo.png') !!}" width="%"> 
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-                <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
+        
         <a class="nav-link" href="#" id="navbarDropdownFlag" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img width="32" height="32" alt="{{ session('locale') }}"  src="{!! asset('images/flags/' . session('locale') . '-flag.png') !!}" />
         </a>
+        
         <div id="flags" class="dropdown-menu" aria-labelledby="navbarDropdownFlag">
             @foreach(config('app.locales') as $locale)
                 @if($locale != session('locale'))
@@ -46,7 +50,8 @@
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdownCat">
         @foreach($categories as $category)
-            <a class="dropdown-item" href="{{ route('category', $category->slug) }}">{{ $category->name }}</a>
+            <a class="dropdown-item" href="{{ route('category', $category->slug) }}">{{ $category->name }}
+            </a>
         @endforeach
     </div>
 </li>
@@ -64,27 +69,36 @@
             <a class="dropdown-item" href="{{ route('category.create') }}">
                 <i class="fas fa-plus fa-lg"></i> @lang('Ajouter une catégorie')
             </a>
+
             <a class="dropdown-item" href="{{ route('category.index') }}">
                 <i class="fas fa-wrench fa-lg"></i> @lang('Gérer les catégories')
             </a>
+
             <a class="dropdown-item" href="{{ route('maintenance.index') }}">
                 <i class="fas fa-cogs fa-lg"></i> @lang('Maintenance')
             </a>
+
         </div>
     </li>
     @endadmin
                 @auth
-                    <li class="nav-item{{ currentRoute(route('image.create')) }}"><a class="nav-link" href="{{ route('image.create') }}">@lang('Ajouter une oeuvre')</a></li>
+                    <li class="nav-item{{ currentRoute(route('image.create')) }}">
+                     <a class="nav-link" href="{{ route('image.create') }}">@lang('Ajouter une oeuvre')
+                     </a>
+                    </li>
                 @endauth
                 @auth
-                    <li class="nav-item{{ currentRoute(route('locations')) }}"><a class="nav-link"href="{{ route('locations') }}">@lang('Carte des oeuvres')</a></li>
+                    <li class="nav-item{{ currentRoute(route('locations')) }}">
+                        <a class="nav-link"href="{{ route('locations') }}">@lang('Carte des oeuvres')
+                        </a>
+                    </li>
                 @endauth
               
     </li>
 
                
                
-            </ul>
+          
             <ul class="navbar-nav ml-auto">
                 @guest
                     <li class="nav-item{{ currentRoute(route('login')) }}"><a class="nav-link" href="{{ route('login') }}">@lang('Connexion')</a></li>
