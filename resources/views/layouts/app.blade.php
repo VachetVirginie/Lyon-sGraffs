@@ -101,7 +101,7 @@
           
             <ul class="navbar-nav ml-auto">
                 @guest
-                    <li class="nav-item{{ currentRoute(route('login')) }}"><a class="nav-link" href="{{ route('login') }}">@lang('| Connexion')</a></li>
+                    <li class="nav-item{{ currentRoute(route('login')) }}"><a class="nav-link" href="{{ route('login') }}">@lang('| PConnexion')</a></li>
                     <li class="nav-item{{ currentRoute(route('register')) }}"><a class="nav-link" href="{{ route('register') }}">@lang('| Inscription')</a></li>
                     @else
                     <li class="nav-item{{ currentRoute(route('profile.edit', auth()->id())) }}"><a class="nav-link" href="{{ route('profile.edit', auth()->id()) }}">@lang('| Profil |')</a></li>

@@ -98,7 +98,7 @@ Route::name('category')->get('category/{slug}', 'ImageController@category');
 
 Route::name('user')->get('user/{user}', 'ImageController@user');
 
+
+
 Route::name('language')->get('language/{lang}', 'HomeController@language');
-
-
 

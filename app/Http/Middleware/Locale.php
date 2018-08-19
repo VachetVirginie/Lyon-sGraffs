@@ -17,11 +17,13 @@ class Locale
         }
         $locale = session('locale');
         app()->setLocale($locale);
-/*        $conversion = [
+        $locale = session('locale');
+        $conversion = [
           'fr' => 'fr_FR',
           'en' => 'en_US',
         ];
-        $locale = $conversion[$locale];*/
+        $locale = $conversion[$locale];
+       
         setlocale(LC_TIME, $locale);
         return $next($request);
     }

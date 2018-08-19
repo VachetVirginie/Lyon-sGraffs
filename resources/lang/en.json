@@ -7,7 +7,7 @@
     "Catégories": "Categories",
     "Cette page n'existe pas": "This page doesn't exist",
     "Confirmation du mot de passe": "Password confirmation",
-    "Connexion": "Login",
+    "| Connexion": "Login",
     "Déconnexion": "Logout",
     "Description (optionnelle)": "Description (optional)",
     "Envoi de la demande": "Send demand",
@@ -17,6 +17,7 @@
     "Erreur 503": "Error 503",
     "Gestion des catégories": "Categories gestion",
     "Gérer les catégories": "Categories gestion",
+    "| Gérer les catégories": "Categories gestion",
     "Il semble y avoir une erreur sur le serveur, veuillez réessayer plus tard...": "Looks like there is a server issue, please try later...",
     "image orpheline|images orphelines": "orphan image|orphans images",
     "images par page": "images per page",
@@ -26,6 +27,7 @@
     "La catégorie a bien été modifiée": "Category has been updated",
     "Le profil a bien été mis à jour": "Profile has been updated",
     "Maintenance": "Maintenance",
+    "| Maintenance": "Maintenance",
     "Modifer le profil": "Profile update",
     "Modifier la catégorie": "Update the category",
     "Modifier une catégorie": "Update a category",
@@ -48,7 +50,8 @@
     "Vos droits d'accès ne pous permettent pas d'accéder à cette ressource": "You might not have the necessary permissions for this resource",
     "Vraiment supprimer cette catégorie ?": "Really delete this category?",
     "Vraiment supprimer toutes les photos orphelines ?": "Really delete all orphans images?",
-    "Carte des oeuvres": "Map",
-    "Ajouter une oeuvre": "Add an artwork",
-    "Oeuvres par catégorie": "Artworks by category"
+    "| Carte des oeuvres ": "| Map",
+    "| Ajouter une catégorie": "Add a category",
+    "| Oeuvres par catégorie ": "| Artworks by category",
+    "| Ajouter une oeuvre ": "| Add an Artwork"
 }
