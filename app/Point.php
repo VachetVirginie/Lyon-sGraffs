@@ -17,6 +17,7 @@ class Point extends Model
   
   public function image()
   {
+      //aller hasOne / retour belongsTo
       return $this->hasOne(Image::class);
   }
 }

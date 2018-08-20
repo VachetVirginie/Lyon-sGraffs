@@ -5,8 +5,10 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+
 class CategoryTest extends TestCase
 {
+   
     /**
      * Test add category.
      *

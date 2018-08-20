@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ { User, Image, Category };
+use App\Point;
 use App\Repositories\ImageRepository;
 use Validator;
 use DB;
@@ -128,7 +129,8 @@ public function user(User $user)
 public function destroy(Image $image)
 {
     $this->authorize('delete', $image);
-    $image->delete();
+    $image->point->delete();
+    // $image->delete();
     return back();
 }
 
