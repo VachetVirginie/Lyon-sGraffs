@@ -7,6 +7,8 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
+ 
+
 define('LARAVEL_START', microtime(true));
 
 /*
@@ -58,3 +60,4 @@ $response = $kernel->handle(
 $response->send();
 
 $kernel->terminate($request, $response);
+
