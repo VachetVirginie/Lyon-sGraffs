@@ -7,6 +7,14 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ config('app.name', "Lyon Street Graff") }}</title>
         <link rel="icon" href="{!! asset('/images/lyon.png') !!}"/>
+        <link rel="manifest" href="{!! asset('manifest.json') !!}">;
+    <script>;
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker
+                   .register('./serviceworker.js')
+                   .then(function() { console.log("Service Worker Registered"); });
+        }
+        </script>;
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         @yield('css')
         <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>

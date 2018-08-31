@@ -5,14 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="manifest" href="/manifest.json">;
-    <script>;
-        if('serviceWorker' in navigator) {
-          navigator.serviceWorker
-                   .register('./service-worker.js')
-                   .then(function() { console.log("Service Worker Registered"); });
-        }
-        </script>;
+    
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     @yield('css')
