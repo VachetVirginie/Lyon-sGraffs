@@ -13,7 +13,8 @@ class HomeController extends Controller
     public function index()
     {
         $images = Image::latestWithUser()->paginate(config('app.pagination'));
-
+        // select * from `images` order by `created_at` desc limit 8 offset 0
+        //select * from `users` where `users`.`id` in ('1')
         return view('home', compact('images'));
     }
      /**

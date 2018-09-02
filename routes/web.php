@@ -27,6 +27,8 @@ Route::name('add')->get('add', function(){
 Route::name('locations')->get('locations', function(){
 	$data = [
 		'points'=>App\Point::with('image')->get()
+		//select * from `points`
+		//select * from `images` where `images`.`point_id` in ('coordonnees')
 	];
 
 	

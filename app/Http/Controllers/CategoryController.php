@@ -74,7 +74,7 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-
+//delete from `categories` where `id` = 'n°'
         return response()->json();
     }
 }

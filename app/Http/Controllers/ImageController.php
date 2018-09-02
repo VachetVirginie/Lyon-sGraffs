@@ -118,6 +118,7 @@ class ImageController extends Controller
     public function category($slug)
 {
     $category = Category::whereSlug($slug)->firstorFail();
+    //select * from `categories` where `slug` = 'graffitis' limit 1
     $images = $this->repository->getImagesForCategory($slug);
     return view('home', compact('category', 'images'));
 }

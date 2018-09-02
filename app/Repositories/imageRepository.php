@@ -36,6 +36,7 @@ class ImageRepository
         return Image::latestWithUser()->whereHas('category', function ($query) use ($slug) {
             $query->whereSlug($slug);
         })->paginate(config('app.pagination'));
+        //select count(*) as aggregate from `images` where exists (select * from `categories` where `images`.`category_id` = `categories`.`id` and `slug` = 'category')
     }
     public function getImagesForUser($id)
     {
